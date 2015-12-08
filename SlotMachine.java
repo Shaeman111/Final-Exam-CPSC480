@@ -1,4 +1,6 @@
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
@@ -17,8 +19,23 @@ public class SlotMachine extends JFrame{
 	JButton sto_button = new JButton("Stop");
 	start_stop.add(sta_button);
 	start_stop.add(sto_button);
-	
 	this.add(start_stop, BorderLayout.SOUTH);
+	
+	final Timer timer = new Timer(100, (ActionListener) this);
+	
+	sta_button.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			timer.start(); 
+		}
+	});
+	sto_button.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			timer.stop();
+		}
+	});
+	
 	 }
 
 	

@@ -1,5 +1,7 @@
 import java.awt.*;
 import java.net.URL;
+import java.util.Collections;
+import java.util.Random;
 
 import javax.swing.*;
 
@@ -13,6 +15,7 @@ public class DisplayPanel extends JPanel {
 	for(int i=0; i<3; i++){  //creates new ImageIcon and puts all 3 jbuttons instead of text
 		slots[i] = new JButton(new ImageIcon(question));
 	    add(slots[i]);
+	    slots[i].setEnabled(false);
 	}
 	}
 	
@@ -21,4 +24,27 @@ private Image getImage(String filename) {
 	ImageIcon icon = new ImageIcon(url);
 	return icon.getImage();
 	}
+
+
+public void changeImages(JButton[] yes){
+	Image[] images = new Image[6];
+	images[0] = getImage("star.gif");
+	images[1] = getImage("triangle.gif");
+	images[2] = getImage("bar.jpg");
+	images[3] = getImage("cherry.jpg");
+	images[4] = getImage("donut.jpg");
+	images[5] = getImage("lemon.jpg");
+	int rnd1 = new Random().nextInt(images.length);
+	int rnd2 = new Random().nextInt(images.length);
+	int rnd3 = new Random().nextInt(images.length);
+
+	yes[0].setIcon(new ImageIcon(images[rnd1]));
+	yes[1].setIcon(new ImageIcon(images[rnd2]));
+	yes[2].setIcon(new ImageIcon(images[rnd3]));
+}
+
+public String chooseImage(String[] strings){
+	return "W";
+}
+
 }
