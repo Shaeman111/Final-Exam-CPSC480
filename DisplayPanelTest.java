@@ -10,23 +10,23 @@ public class DisplayPanelTest {
 		String expected = null;
 		String actual = DisplayPanel.chooseImage(inputArray);
 		assertEquals(expected, actual);
-		//i'm getting null pointer exceptions
+		//i'm getting a null pointer exception
 	}
 	
 	@Test
 	public void chooseImageTest2() {
-		String[] inputArray2 = new String[1];
+		String[] inputArray2 = new String[2];
 		inputArray2[0] = "Yes";
 		inputArray2[1] = "No";
 		String expected2 = "Yes";
 		String actual2 = DisplayPanel.chooseImage(inputArray2);
 		assertEquals(expected2, actual2);
-		//i'm getting null pointer exceptions
+		//test passes!
 	}
 	
 	@Test
 	public void chooseImageTest3() {
-		String[] inputArray3 = new String[5];
+		String[] inputArray3 = new String[6];
 		inputArray3[0] = "Yes";
 		inputArray3[1] = "No";
 		inputArray3[2] = "Maybe";
@@ -36,7 +36,7 @@ public class DisplayPanelTest {
 		String expected3 = "Ask?";
 		String actual3 = DisplayPanel.chooseImage(inputArray3);
 		assertEquals(expected3, actual3);
-		//i'm getting null pointer exceptions
+		//test passes!
 	}
 
 }
