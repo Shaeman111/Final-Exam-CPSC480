@@ -1,6 +1,7 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
-import java.util.Collections;
 import java.util.Random;
 
 import javax.swing.*;
@@ -43,8 +44,16 @@ public void changeImages(JButton[] yes){
 	yes[2].setIcon(new ImageIcon(images[rnd3]));
 }
 
-public String chooseImage(String[] strings){
-	return "W";
+
+
+public static String chooseImage(String[] strings){
+	if (strings[0] == null){
+		return null;
+	}
+	else if (strings.length>0 && strings.length<4){
+		return strings[0];
+	}
+	return strings[strings.length-1];
 }
 
 }

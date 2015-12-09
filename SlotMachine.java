@@ -21,18 +21,19 @@ public class SlotMachine extends JFrame{
 	start_stop.add(sto_button);
 	this.add(start_stop, BorderLayout.SOUTH);
 	
-	final Timer timer = new Timer(100, (ActionListener) this);
 	
-	sta_button.addActionListener(new ActionListener() {
+	//Timer timer = new Timer(100, new ActionListener(){
+
+	sta_button.addActionListener(new ActionListener(){
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			timer.start(); 
+			//timer.start();
 		}
 	});
 	sto_button.addActionListener(new ActionListener() {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			timer.stop();
+			//timer.stop();
 		}
 	});
 	
